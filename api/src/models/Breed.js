@@ -1,6 +1,8 @@
 const {DataTypes} = require('sequelize')
 
-const Breed = (sequelize)=>{
+
+
+module.exports = (sequelize)=>{
   sequelize.define('Breed',{
     id:{
       type: DataTypes.INTEGER,
@@ -29,8 +31,4 @@ const Breed = (sequelize)=>{
       allowNull: false 
     }
   }, { timestamps: false })
-}
-
-module.exports = {
-  Breed
 }

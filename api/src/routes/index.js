@@ -7,6 +7,8 @@ const router = Router();
 
 // Configurar los routers
 // Ejemplo: router.use('/auth', authRouter);
+const getBreeds = require('../controllers/getBreeds')
 
+router.get('/', getBreeds)
 
-module.exports = router;
+module.exports = {router};

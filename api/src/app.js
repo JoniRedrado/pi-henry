@@ -1,4 +1,4 @@
-const express = require('express');
+/*const express = require('express');
 const cookieParser = require('cookie-parser');
 const bodyParser = require('body-parser');
 const morgan = require('morgan');
@@ -31,5 +31,22 @@ server.use((err, req, res, next) => { // eslint-disable-line no-unused-vars
   console.error(err);
   res.status(status).send(message);
 });
+
+module.exports = server;
+*/
+
+
+const express = require('express')
+const server = express()
+const cors = require('cors')
+const {router} = require('./routes/index')
+const {conn} = require('./db.js')
+
+
+server.use(cors())
+
+server.use(express.json())
+
+server.use('/dogs', router)
 
 module.exports = server;

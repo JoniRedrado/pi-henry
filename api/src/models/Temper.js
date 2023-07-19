@@ -1,7 +1,7 @@
 const sequelize = require('sequelize')
 const { DataTypes } = require('sequelize')
 
-const Temper = (sequelize)=>{
+module.exports = (sequelize)=>{
   sequelize.define('Temper', {
     id: {
       type: DataTypes.INTEGER,
@@ -15,8 +15,4 @@ const Temper = (sequelize)=>{
       allowNull: false
     }
   }, { timestamps: false })
-}
-
-module.exports = {
-  Temper
 }
