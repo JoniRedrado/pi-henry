@@ -1,4 +1,3 @@
-const sequelize = require('sequelize')
 const { DataTypes } = require('sequelize')
 
 module.exports = (sequelize)=>{
@@ -6,13 +5,12 @@ module.exports = (sequelize)=>{
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
-      allowNull: false,
-      unique: true,
-      autoIncrement: true
+      autoIncrement: true,
     },
     name: {
       type: DataTypes.STRING,
-      allowNull: false
+      allowNull: false,
+      unique: true
     }
   }, { timestamps: false })
 }

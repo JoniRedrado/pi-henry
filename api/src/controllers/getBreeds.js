@@ -6,6 +6,7 @@ module.exports = (req, res)=>{
   axios(URL)
     .then(({data})=>{
       const breeds = data
+      console.log(data.length);
       res.status(200).json(data)
     })
     .catch(error=>{
