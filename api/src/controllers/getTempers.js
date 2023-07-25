@@ -15,24 +15,26 @@ module.exports = async (req, res)=>{
       breeds.forEach(breed => {
         const actualTempers = breed.temperament?.split(", ")
         
-          actualTempers?.forEach(temper => {
-            //const repeated = tempers.includes(temper)
-            if(!tempers.includes(temper)) {
-              tempers.push(temper)
-            }
-            
-          })
-        });
-        tempers.forEach(temper=>{
-          Temper.create({id:1 ,name: temper})
+        actualTempers?.forEach(temper => {
+          if(!tempers.includes(temper)) {
+            tempers.push(temper)
+          }
         })
+      });
+        
+      tempers.forEach(async (temper)=>{
+        const newTemper = await Temper.create({name: temper})
+      })
+
+      //console.log(dbTempers, "db");
+      res.status(200).json(dbTempers)
+    } else {
+      console.log("Ya hay datos!");
+      res.status(200).json(dbTempers)
     }
-    
-    const result = await Temper.findAll()
-      console.log(result);
-      res.status(200).json({tempers})
-    })
+  })
     .catch(error=>{
       res.status(500).json(error.message)
     })
 }
+

@@ -11,6 +11,7 @@ const getBreeds = require('../controllers/getBreeds')
 const getBreedById = require('../controllers/getBreedById')
 const getBreedByName = require('../controllers/getBreedByName')
 const getTempers = require('../controllers/getTempers')
+const newBreed = require('../controllers/newBreed')
 
 //GET BREEDS
 router.get('/', getBreeds)
@@ -23,5 +24,8 @@ router.get('/dogs/name', getBreedByName)
 
 //GET TEMPERS
 router.get('/tempers/all', getTempers)
+
+//POST DOG
+router.post('/newbreed', newBreed)
 
 module.exports = {router};

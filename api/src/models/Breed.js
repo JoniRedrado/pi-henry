@@ -6,9 +6,8 @@ module.exports = (sequelize)=>{
   sequelize.define('Breed',{
     id:{
       type: DataTypes.INTEGER,
-      allowNull: false,
       primaryKey: true,
-      unique: true
+      autoIncrement: true
     },
     image:{
       type: DataTypes.STRING,
@@ -17,6 +16,7 @@ module.exports = (sequelize)=>{
     name: {
       type: DataTypes.STRING,
       allowNull: false,
+      unique: true,
     },
     heigth: {
       type: DataTypes.STRING,
@@ -29,6 +29,10 @@ module.exports = (sequelize)=>{
     lifetime: {
       type: DataTypes.STRING,
       allowNull: false 
+    },
+    temper: {
+      type: DataTypes.STRING,
+      allowNull: true,
     }
   }, { timestamps: false })
 }
