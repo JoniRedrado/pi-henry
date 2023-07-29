@@ -5,6 +5,8 @@ module.exports = async (req,res)=>{
     try {
         
         const {image, name, heigth,weigth, lifetime, tempers} = req.body
+        const temper = tempers.join(", ")
+        console.log(temper);
         /*
         let finalTempers = []
         let tempersStr = ""
@@ -17,11 +19,11 @@ module.exports = async (req,res)=>{
         
         //const tempersStr = finalTempers.join(", ")
         //console.log(tempersStr, "hola");
-        const temper = await Temper.findOne({where: {name: 'Stubborn'}})
+        //const temper = await Temper.findOne({where: {name: 'Stubborn'}})
         const newBreed = await Breed.create({image, name, heigth, weigth, lifetime})
         //console.log(finalTempers.join(", "));
         
-        await newBreed.addTemper(temper)
+        //await newBreed.addTemper(temper)
 
         /*tempers.forEach(async (temp)=>{
             newBreed.addTemper({

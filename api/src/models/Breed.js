@@ -17,6 +17,9 @@ module.exports = (sequelize)=>{
       type: DataTypes.STRING,
       allowNull: false,
       unique: true,
+      validate: {
+        len: [1, 50]
+      }
     },
     heigth: {
       type: DataTypes.STRING,
@@ -32,7 +35,7 @@ module.exports = (sequelize)=>{
     },
     temper: {
       type: DataTypes.STRING,
-      allowNull: true,
-    }
+      allowNull: true
+    },
   }, { timestamps: false })
 }
